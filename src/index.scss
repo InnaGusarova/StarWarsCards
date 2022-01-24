@@ -220,10 +220,10 @@ code {
   .items {
     margin-top: 55px;
   }
-  .page, .items, .favorites {
+  .page, .items, .favorites, .favorites__items {
     @include flexColumnMedia;
   }
-  .items__item-list {
+  .items__item-list, .favorites__items {
     justify-content: center;
   }
   .pop-up {
@@ -236,5 +236,8 @@ code {
   }
   .items__header {
     text-align: center;
+  }
+  .favorites__button_active {
+    margin-top: 60px;
   }
 }
