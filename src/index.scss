@@ -1,0 +1,235 @@
+$primoryColorText: #fff;
+$secondaryColorText: #d0b949;
+$primoryColorBorder: rgb(208, 185, 73, 0.7);
+$borderItem: 6px solid rgb(208, 185, 73, 0.7);
+$popUpBackground: rgba(0,0,0,1);
+
+
+@mixin button {
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 10px 14px;
+  background: transparent;
+  border: 4px solid $primoryColorBorder; 
+  color: $primoryColorText;
+  font-weight: 700;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@mixin flexColumnMedia {
+  align-items: center;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(../src/img/sky.jpg) ;
+  background-repeat: repeat-y;
+  background-size: 100%;
+  color: $primoryColorText;
+  min-width: 320px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.page {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+  @include flexColumn;
+}
+.gif {
+  display: block;
+  margin: 100px auto;
+  width: 300px;
+}
+
+.menu {
+  display: flex;
+  margin: 10px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.button {
+  width: 100px;
+ @include button;
+}
+
+.button:hover {
+  background: $secondaryColorText;
+}
+
+.items__list, .pop-up__list, .favorites__list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.items  {
+  width: 100%;
+  @include flexColumn;
+}
+.items__item-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+}
+.items__item {
+  max-width: 250px;
+  width: 100%;
+  height: 205px;
+  margin: 10px;
+  border: $borderItem; 
+  border-radius: 25px;
+  padding: 30px;
+  position: relative;
+}
+
+.item__header {
+  margin: 0;
+  max-width: 95%;
+  color: $secondaryColorText;
+}
+.item__header:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.item__button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+.items__buttons {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+}
+.pop-up_open {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  background-color: $popUpBackground;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.pop-up_not-open {
+  display: none;
+}
+.pop-up {
+  position: relative;
+  margin:100px auto 0px auto;
+  max-width: fit-content;
+  min-width: 285px;
+  height: fit-content;
+  padding: 10px;
+  background-image: url(../src/img/sky.jpg) ;
+  border: $borderItem;
+  border-radius: 25px;
+  z-index: 1000;
+}
+.pop-up__button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  background-color: $primoryColorBorder;
+  border-radius: 25px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pop-up__header {
+  color: $secondaryColorText;
+}
+.favorites {
+  width: 100%;
+  @include flexColumn;
+}
+.favorites__items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: flex-start;
+}
+.favorites__button_active {
+  display: block;
+  margin-left: 10px;
+  width: 210px;
+  margin-right: 10px;
+}
+.favorites__button_active:hover {
+  background-color: #d0b949;
+}
+.favorites__button_not-active {
+  display: none;
+}
+.favorites__text {
+  width: 91%;
+  font-size: 91px;
+  margin: 10% auto;
+  text-align: center;
+  color: $secondaryColorText;
+}
+.list__sub-list {
+  display: block;
+  color: $secondaryColorText;
+}
+
+@media (max-width:640px) {
+  body {
+    background-size: cover;
+  }
+  .menu {
+    background-color: $popUpBackground;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    margin: 0;
+    padding-top: 5px;
+  }
+  .items {
+    margin-top: 55px;
+  }
+  .page, .items, .favorites {
+    @include flexColumnMedia;
+  }
+  .items__item-list {
+    justify-content: center;
+  }
+  .pop-up {
+    margin:10px auto 0px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .favorites__text {
+    font-size: 36px;
+  }
+
+}

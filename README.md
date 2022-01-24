@@ -1,3 +1,14 @@
+Инна Гусарова
+Junior frontend-разработчик
+Данная работа выполнена в рамках тестового задания для компании МЕЛ с использованием React, SCSS
+Для локальной установки использовать команды 
+    npm install
+    npm run start
+
+
+
+// ВСЕ ЧТО НИЖЕ СТЕРЕТЬ
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
