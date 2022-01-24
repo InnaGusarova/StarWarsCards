@@ -72,7 +72,10 @@ code {
 .button:hover {
   background: $secondaryColorText;
 }
-
+.items__header {
+  color: $secondaryColorText;
+  margin-left: 10px;
+}
 .items__list, .pop-up__list, .favorites__list {
   width: 100%;
   list-style: none;
@@ -231,5 +234,7 @@ code {
   .favorites__text {
     font-size: 36px;
   }
-
+  .items__header {
+    text-align: center;
+  }
 }

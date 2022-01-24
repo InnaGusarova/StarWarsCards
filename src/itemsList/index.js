@@ -16,6 +16,7 @@ class ItemsList extends React.Component {
     const {items, showPopUp, handleClick, prevPage, nextPage, favorites} = this.props
     return (
         <section className="items">
+          <h1 className="items__header">Catalog of actors from the film Star Wars</h1>
           <div className="items__item-list">
             {
               items?.results.map ((item, i) =>
